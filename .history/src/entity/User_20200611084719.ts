@@ -7,9 +7,12 @@ export class User extends BaseEntity {
 	@PrimaryGeneratedColumn()
 	id: number;
 
-	@Column('text')
-	email: string;
+	@Column()
+	firstName: string;
 
-	@Column('text')
-	password: string;
+	@Column()
+	lastName: string;
+
+	@Column()
+	age: number;
 }
