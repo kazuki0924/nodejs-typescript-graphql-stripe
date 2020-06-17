@@ -6,11 +6,12 @@ import * as bcrypt from 'bcryptjs';
 
 export const resolvers: IResolvers = {
 	Query: {
-		me: (_, __, {req}) => {
+		me: (_, __, { req }) => {
 			if (!req.session.userId) {
-			return null
-		}
-		return User.findOne(req.session.userId)
+				return null;
+			}
+			return User.findOne(req.session.userId);
+		},
 	},
 	Mutation: {
 		register: async (_, { email, password }) => {
